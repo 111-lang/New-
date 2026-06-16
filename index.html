@@ -87,23 +87,23 @@
     </div>
 
 　　<label for="timeInput1" style="display:block; text-align:left; font-size:0.9em; color:#4a5568; margin-bottom: 4px;">設定時刻:</label>
-    <input type="time" id="timeInput" value="08:00">
+    <input type="time" id="timeInput1" value="08:00">
     
 　
     
 <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;">
     
     <label for="timeInput2" style="display:block; text-align:left; font-size:0.9em; color:#718096;">送信する時刻を選択:</label>
-    <input type="time" id="timeInput" value="12:00">
+    <input type="time" id="timeInput2" value="12:00">
     
     <button id="sendBtn" class="btn-send" disabled>えさやり時刻を送信</button>
 </div>
 
 <button id="esayari" class="btn-send" disabled>えさやり</button>
-</div>
+
 
 <button id="teishi" class="btn-send" disabled>強制停止</button>
-</div>
+
 
 
 <script>
@@ -180,7 +180,7 @@
 
         try {
             // 改行コード（\n）を付加してシリアル送信（micro:bit側で受信の区切りにしやすくするため）
-            await writer.write(esayari + '\n');
+            await writer.write(esa + '\n');
             alert(`送信しました: ${えさやり}`);
         } catch (error) {
             console.error("送信エラー:", error);
@@ -194,7 +194,7 @@
 
         try {
             // 改行コード（\n）を付加してシリアル送信（micro:bit側で受信の区切りにしやすくするため）
-            await writer.write(teishi + '\n');
+            await writer.write(kyoseiteishi + '\n');
             alert(`送信しました: ${強制停止}`);
         } catch (error) {
             console.error("送信エラー:", error);
