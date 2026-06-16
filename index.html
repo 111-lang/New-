@@ -183,7 +183,7 @@
 
         try {
             // 改行コード（\n）を付加してシリアル送信（micro:bit側で受信の区切りにしやすくするため）
-            await writer.write(えさやり + '\n');
+            await writer.write('えさやり\n');
             alert(`送信しました: ${えさやり}`);
         } catch (error) {
             console.error("送信エラー:", error);
@@ -197,7 +197,7 @@
 
         try {
             // 改行コード（\n）を付加してシリアル送信（micro:bit側で受信の区切りにしやすくするため）
-            await writer.write(強制停止 + '\n');
+            await writer.write('強制停止\n');
             alert(`送信しました: ${強制停止}`);
         } catch (error) {
             console.error("送信エラー:", error);
